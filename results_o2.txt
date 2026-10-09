@@ -1,0 +1,107 @@
+Project 2 variant 13 (std::reduce)
+Optimization level:     02
+CPU hardware threads:   12
+
+ Processing dataset: data_100k.txt (100000 elements)
+
+[1 & 2] Standard Policies Benchmark (Median Time in us)
+Execution Policy                     |      Time (us)
+-----------------------------------------------------
+accumulate (sequential)              |          78.30
+reduce (no policy)                   |          23.40
+reduce (std::execution::seq)         |          23.30
+reduce (std::execution::par)         |          20.10
+reduce (std::execution::par_unseq)   |          32.00
+reduce (std::execution::unseq)       |          18.80
+
+[3] Custom Parallel Algorithm Scaling Table (Varying K)
+     K |      Time (us) |    Speedup | Validation
+----------------------------------------------------
+     1 |          18.70 |      1.00x |         OK
+     2 |         870.80 |      0.02x |         OK
+     4 |        2035.80 |      0.01x |         OK
+     8 |        3519.50 |      0.01x |         OK
+    12 |        6079.40 |      0.00x |         OK
+    16 |        8963.10 |      0.00x |         OK
+    24 |       14381.40 |      0.00x |         OK
+    32 |       17029.60 |      0.00x |         OK
+    64 |       34420.50 |      0.00x |         OK
+   128 |       68485.60 |      0.00x |         OK
+   256 |      158570.80 |      0.00x |         OK
+   512 |      348730.80 |      0.00x |         OK
+  1024 |      705229.60 |      0.00x |         OK
+----------------------------------------------------
+Optimal K:                1 threads
+Optimal Time:             18.70 us
+Hardware CPU Threads:     12
+Ratio (Best K / HW):      0.08
+
+ Processing dataset: data_1m.txt (1000000 elements)
+
+[1 & 2] Standard Policies Benchmark (Median Time in us)
+Execution Policy                     |      Time (us)
+-----------------------------------------------------
+accumulate (sequential)              |         847.80
+reduce (no policy)                   |         194.40
+reduce (std::execution::seq)         |         239.30
+reduce (std::execution::par)         |         313.90
+reduce (std::execution::par_unseq)   |          95.00
+reduce (std::execution::unseq)       |         302.50
+
+[3] Custom Parallel Algorithm Scaling Table (Varying K)
+     K |      Time (us) |    Speedup | Validation
+----------------------------------------------------
+     1 |         310.70 |      1.00x |         OK
+     2 |        1215.60 |      0.26x |         OK
+     4 |        1841.90 |      0.17x |         OK
+     8 |        3337.30 |      0.09x |         OK
+    12 |        5256.50 |      0.06x |         OK
+    16 |        6625.30 |      0.05x |         OK
+    24 |       10045.60 |      0.03x |         OK
+    32 |       13943.30 |      0.02x |         OK
+    64 |       29461.10 |      0.01x |         OK
+   128 |       61800.80 |      0.01x |         OK
+   256 |      150832.50 |      0.00x |         OK
+   512 |      338094.60 |      0.00x |         OK
+  1024 |      774328.60 |      0.00x |         OK
+----------------------------------------------------
+Optimal K:                1 threads
+Optimal Time:             310.70 us
+Hardware CPU Threads:     12
+Ratio (Best K / HW):      0.08
+
+ Processing dataset: data_10m.txt (10000000 elements)
+
+[1 & 2] Standard Policies Benchmark (Median Time in us)
+Execution Policy                     |      Time (us)
+-----------------------------------------------------
+accumulate (sequential)              |        7951.00
+reduce (no policy)                   |        3852.30
+reduce (std::execution::seq)         |        3555.70
+reduce (std::execution::par)         |        2399.60
+reduce (std::execution::par_unseq)   |        2350.40
+reduce (std::execution::unseq)       |        3733.20
+
+[3] Custom Parallel Algorithm Scaling Table (Varying K)
+     K |      Time (us) |    Speedup | Validation
+----------------------------------------------------
+     1 |        3628.20 |      1.00x |         OK
+     2 |        3405.00 |      1.07x |         OK
+     4 |        4314.10 |      0.84x |         OK
+     8 |        5973.60 |      0.61x |         OK
+    12 |        7819.30 |      0.46x |         OK
+    16 |        9372.70 |      0.39x |         OK
+    24 |       12719.90 |      0.29x |         OK
+    32 |       17114.30 |      0.21x |         OK
+    64 |       34172.90 |      0.11x |         OK
+   128 |       72898.10 |      0.05x |         OK
+   256 |      163459.40 |      0.02x |         OK
+   512 |      362080.50 |      0.01x |         OK
+  1024 |      747314.20 |      0.00x |         OK
+----------------------------------------------------
+Optimal K:                2 threads
+Optimal Time:             3405.00 us
+Hardware CPU Threads:     12
+Ratio (Best K / HW):      0.17
+
+Execution finished successfully.
